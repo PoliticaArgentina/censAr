@@ -1,3 +1,5 @@
+<a><img src="https://user-images.githubusercontent.com/12114624/170827237-86cf8586-204b-46b0-a0f2-c38184966f75.jpg" width="200" align="right"/></a>
+
 # censAr
 Paquete de R para trabajar con datos de los Censos de Argentina
 
