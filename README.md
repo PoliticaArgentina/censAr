@@ -14,6 +14,12 @@ Paquete de R para trabajar con datos de los Censos de Argentina
 * http://datar.info/dataset/cnpv-1991-microdatos (1991 en txt plano)
 * http://datar.info/dataset/censo-2010-microdatos (2010) 
 
+**Detalle de los archivos comprimidos**
+![image](https://user-images.githubusercontent.com/12114624/170827087-f2cdc8c0-cdfd-4e3b-b72a-039f321420f7.png)
+
+
+
+
 ### GEO 
 
 - 2001 http://datar.info/dataset/cartografia-censo-2001
