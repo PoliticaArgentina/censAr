@@ -1,6 +1,6 @@
 msg <- function(..., startup = FALSE) {
   if (startup) {
-    if (!isTRUE(getOption("censo2017.quiet"))) {
+    if (!isTRUE(getOption("censAr.quiet"))) {
       packageStartupMessage(text_col(...))
     }
   } else {

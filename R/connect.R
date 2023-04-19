@@ -1,8 +1,8 @@
 censo_path <- function() {
-  sys_censo_path <- Sys.getenv("CENSO2017_DIR")
+  sys_censo_path <- Sys.getenv("CENSAR_DIR")
   sys_censo_path <- gsub("\\\\", "/", sys_censo_path)
   if (sys_censo_path == "") {
-    return(gsub("\\\\", "/", tools::R_user_dir("censo2017")))
+    return(gsub("\\\\", "/", tools::R_user_dir("censAr")))
   } else {
     return(gsub("\\\\", "/", sys_censo_path))
   }
@@ -40,10 +40,10 @@ censo_check_status <- function() {
 #' }
 censo_conectar <- function(dir = censo_path()) {
   duckdb_version <- utils::packageVersion("duckdb")
-  db_file <- paste0(dir, "/censo2017_duckdb_v", gsub("\\.", "", duckdb_version), ".sql")
-  
+  db_file <- paste0(dir, "/censAr_duckdb_v", gsub("\\.", "", duckdb_version), ".sql")
+
   db <- mget("censo_conectar", envir = censo_cache, ifnotfound = NA)[[1]]
-  
+
   if (inherits(db, "DBIConnection")) {
     if (DBI::dbIsValid(db)) {
       return(db)
@@ -53,7 +53,7 @@ censo_conectar <- function(dir = censo_path()) {
   try(dir.create(dir, showWarnings = FALSE, recursive = TRUE))
 
   drv <- duckdb::duckdb(db_file, read_only = FALSE)
-  
+
   tryCatch({
     con <- DBI::dbConnect(drv)
   },
@@ -114,7 +114,7 @@ censo_disconnect_ <- function(environment = censo_cache) {
   }
   observer <- getOption("connectionObserver")
   if (!is.null(observer)) {
-    observer$connectionClosed("Censo2017", "censo2017")
+    observer$connectionClosed("CensAe", "censAe")
   }
 }
 
@@ -137,7 +137,7 @@ censo_status <- function(msg = TRUE) {
 
 censo_tables <- function() {
   c("comunas", "hogares", "personas", "provincias",
-    "regiones", "viviendas", "zonas", 
+    "regiones", "viviendas", "zonas",
     "variables", "variables_codificacion", "metadatos")
 }
 

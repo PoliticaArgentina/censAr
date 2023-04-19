@@ -2,7 +2,7 @@ sql_action <- function() {
   if (requireNamespace("rstudioapi", quietly = TRUE) &&
       exists("documentNew", asNamespace("rstudioapi"))) {
     contents <- paste(
-      "-- !preview conn=censo2017::censo_conectar()",
+      "-- !preview conn=censAr::censo_conectar()",
       "",
       "SELECT * FROM comunas",
       "",
@@ -21,11 +21,11 @@ censo_pane <- function() {
   observer <- getOption("connectionObserver")
   if (!is.null(observer) && interactive()) {
     observer$connectionOpened(
-      type = "Censo2017",
-      host = "censo2017",
+      type = "CensAr",
+      host = "censAr",
       displayName = "Tablas Censo 2017",
-      icon = system.file("img", "cl-logo.png", package = "censo2017"),
-      connectCode = "censo2017::censo_pane()",
+      icon = system.file("img", "cl-logo.png", package = "censAr"),
+      connectCode = "censAr::censo_pane()",
       disconnect = censo2017::censo_desconectar,
       listObjectTypes = function() {
         list(
@@ -55,11 +55,11 @@ censo_pane <- function() {
       },
       actions = list(
         Status = list(
-          icon = system.file("img", "ropensci-logo.png", package = "censo2017"),
+          icon = system.file("img", "ropensci-logo.png", package = "censAr"),
           callback = censo_status
         ),
         SQL = list(
-          icon = system.file("img", "edit-sql.png", package = "censo2017"),
+          icon = system.file("img", "edit-sql.png", package = "censAr"),
           callback = sql_action
         )
       ),
@@ -71,6 +71,6 @@ censo_pane <- function() {
 update_censo_pane <- function() {
   observer <- getOption("connectionObserver")
   if (!is.null(observer)) {
-    observer$connectionUpdated("Censo2017", "censo2017", "")
+    observer$connectionUpdated("CensAr", "censAr", "")
   }
 }
