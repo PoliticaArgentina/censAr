@@ -1,0 +1,13 @@
+.github
+^censo2017\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^LICENSE\.md$
+^CODE_OF_CONDUCT\.md$
+^codemeta\.json$
+codecov.yml
+vignettes
+^CRAN-RELEASE$
+^cran-comments\.md$
+README.md
+^README\.Rmd$
