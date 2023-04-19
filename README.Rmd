@@ -1,6 +1,3 @@
- lines (88 sloc)  6.49 KB
- 
-
 ---
 output: github_document
 ---
