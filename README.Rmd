@@ -1,6 +1,24 @@
+ lines (88 sloc)  6.49 KB
+ 
+
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 <a><img src="https://user-images.githubusercontent.com/12114624/170827237-86cf8586-204b-46b0-a0f2-c38184966f75.jpg" width="200" align="right"/></a>
 
-# censAr
+# censAr    
 
 Paquete de R para trabajar con datos de los Censos de Argentina basado en [_Censo Chile (Redatam) R pkg_](https://github.com/ropensci/censo2017)
 
