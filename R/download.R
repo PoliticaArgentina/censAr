@@ -50,13 +50,14 @@ censo_descargar <- function(ver = NULL) {
   utils::unzip(zfile, overwrite = TRUE, exdir = destdir)
   unlink(zfile)
 
-  finp_ctsv <- list.files(destdir, full.names = TRUE, pattern = "csv")
+  finp_tsv <- list.files(destdir, full.names = TRUE, pattern = "tsv")
+  finp_tsv <- finp_tsv[2:8]
 
   invisible(create_schema())
 
-  for (x in seq_along(finp_csv)) {
+  for (x in seq_along(finp_tsv)) {
 
-    tout <- gsub(".*/", "", gsub("\\.csv", "", finp_csv[x]))
+    tout <- gsub(".*/", "", gsub("\\.tsv", "", finp_tsv[x]))
 
     msg(sprintf("Creando tabla %s ...", tout))
 
@@ -68,14 +69,14 @@ censo_descargar <- function(ver = NULL) {
         paste0(
           "COPY ", tout, " FROM '",
           finp_tsv[x],
-          "' ( DELIMITER ',', HEADER 1, NULL 'NA' )"
+          "' ( DELIMITER '\t', HEADER 1, NULL 'NA' )" # reemplazo \t por ,
         )
       )
     )
 
     DBI::dbDisconnect(con, shutdown = TRUE)
 
-    unlink(finp_csv[x])
+    unlink(finp_tsv[x])
     invisible(gc())
   }
 

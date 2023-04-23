@@ -114,7 +114,7 @@ censo_disconnect_ <- function(environment = censo_cache) {
   }
   observer <- getOption("connectionObserver")
   if (!is.null(observer)) {
-    observer$connectionClosed("CensAe", "censAe")
+    observer$connectionClosed("CensAr", "censAr")
   }
 }
 
@@ -124,11 +124,11 @@ censo_status <- function(msg = TRUE) {
 
   if (isTRUE(all.equal(expected_tables, existing_tables))) {
     status_msg <- crayon::green(paste(cli::symbol$tick,
-    "La base de datos local del Censo 2017 esta OK."))
+    "La base de datos local de CensAr esta OK."))
     out <- TRUE
   } else {
     status_msg <- crayon::red(paste(cli::symbol$cross,
-    "La base de datos local del Censo 2017 esta vacia, daniada o no es compatible con tu version de duckdb. Descargala con censo_descargar()."))
+    "La base de datos local de CensAr esta vacia, daniada o no es compatible con tu version de duckdb. Descargala con censo_descargar()."))
     out <- FALSE
   }
   if (msg) msg(status_msg)
@@ -136,9 +136,8 @@ censo_status <- function(msg = TRUE) {
 }
 
 censo_tables <- function() {
-  c("comunas", "hogares", "personas", "provincias",
-    "regiones", "viviendas", "zonas",
-    "variables", "variables_codificacion", "metadatos")
+  c("VIVIENDA", "RADIO", "PROV", "PERSONA",
+    "HOGAR", "DPTO", "FRAC", "variables_codificacion", "metadatos")
 }
 
 censo_cache <- new.env()

@@ -2,156 +2,155 @@
 #' @noRd
 create_schema <- function() {
   con <- censo_conectar()
-  
-  # comunas ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS comunas")
-  
+
+  # HOGAR ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS HOGAR")
+
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE comunas (
-	comuna_ref_id INTEGER NOT NULL,
-	provincia_ref_id INTEGER NULL,
-	idcomuna VARCHAR NULL,
-	redcoden VARCHAR(5) NOT NULL,
-	nom_comuna VARCHAR NULL)"
+    "CREATE TABLE HOGAR (
+    HOGAR_REF_ID INTEGER NOT NULL,
+    VIVIENDA_REF_ID INTEGER NULL,
+    NHOG INTEGER NULL,
+    H05 INTEGER NULL,
+    H06 INTEGER NULL,
+    H07 INTEGER NULL,
+    H08 INTEGER NULL,
+    H09 INTEGER NULL,
+    H10 INTEGER NULL,
+    H11 INTEGER NULL,
+    H12 INTEGER NULL,
+    H13 INTEGER NULL,
+    H14 INTEGER NULL,
+    H15 INTEGER NULL,
+    H16 INTEGER NULL,
+    H19A INTEGER NULL,
+    H19B INTEGER NULL,
+    H19C INTEGER NULL,
+    H19D INTEGER NULL,
+    PROP INTEGER NULL,
+    INDHAC INTEGER NULL,
+    TOTPERS INTEGER NULL,
+    ALGUNBI INTEGER NULL)"
   )
-  
-  # hogares ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS hogares")
-  
+
+  # PERSONA ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS PEROSONA")
+
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE hogares (
-	hogar_ref_id INTEGER NOT NULL,
-	vivienda_ref_id INTEGER NULL,
-	nhogar INTEGER NULL,
-	tipo_hogar INTEGER NULL,
-	ncu_yern_nuer INTEGER NULL,
-	n_herm_cun INTEGER NULL,
-	nuc_herm_cun INTEGER NULL,
-	num_sueg_pad_abu INTEGER NULL,
-	nuc_pad_sueg_abu INTEGER NULL,
-	num_otros INTEGER NULL,
-	nuc_otros INTEGER NULL,
-	num_no_par INTEGER NULL,
-	nuc_no_par INTEGER NULL,
-	tot_nucleos INTEGER NULL)"
-  )
-  
-  # personas ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS personas")
-  
-  DBI::dbSendQuery(
-    con,
-    "CREATE TABLE personas (
-	persona_ref_id DOUBLE NULL,
-	hogar_ref_id INTEGER NULL,
+    "CREATE TABLE PERSONA (
+	PERSONA_REF_ID INTEGER NOT NULL,
+	HOGAR_REF_ID INTEGER NULL,
 	personan INTEGER NULL,
-	p07 INTEGER NULL,
-	p08 INTEGER NULL,
-	p09 INTEGER NULL,
-	p10 INTEGER NULL,
-	p10comuna INTEGER NULL,
-	p10pais INTEGER NULL,
-	p10pais_grupo INTEGER NULL,
-	p11 INTEGER NULL,
-	p11comuna INTEGER NULL,
-	p11pais INTEGER NULL,
-	p11pais_grupo INTEGER NULL,
-	p12 INTEGER NULL,
-	p12comuna INTEGER NULL,
-	p12pais INTEGER NULL,
-	p12pais_grupo INTEGER NULL,
-	p12a_llegada INTEGER NULL,
-	p12a_tramo INTEGER NULL,
-	p13 INTEGER NULL,
-	p14 INTEGER NULL,
-	p15 INTEGER NULL,
-	p15a INTEGER NULL,
-	p16 INTEGER NULL,
-	p16a INTEGER NULL,
-	p16a_otro INTEGER NULL,
-	p16a_grupo INTEGER NULL,
-	p17 INTEGER NULL,
-	p18 VARCHAR NULL,
-	p19 INTEGER NULL,
-	p20 INTEGER NULL,
-	p21m INTEGER NULL,
-	p21a INTEGER NULL,
-	escolaridad INTEGER NULL,
-	rec_parentesco INTEGER NULL)"
+	P01 INTEGER NULL,
+	P02 INTEGER NULL,
+	P03 INTEGER NULL,
+	P05 INTEGER NULL,
+	P07 INTEGER NULL,
+	P12 INTEGER NULL,
+	EDADAGRU INTEGER NULL,
+	EDADQUI INTEGER NULL,
+	P08 INTEGER NULL,
+	P09 INTEGER NULL,
+	P10 INTEGER NULL,
+	CONDACT INTEGER NULL)"
   )
-  
-  # provincias ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS provincias")
-  
+
+  # PROV ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS PROV")
+
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE provincias (
-	provincia_ref_id INTEGER NULL,
-	region_ref_id INTEGER NULL,
-	idprovincia INTEGER NULL,
-	redcoden VARCHAR(3) NOT NULL,
-	nom_provincia VARCHAR NULL)"
+    "CREATE TABLE PROV (
+	PROV_REF_ID INTEGER NULL,
+	CPV2010_REF_ID INTEGER NULL,
+	IDPROV INTEGER NULL,
+	PROV VARCHAR(3) NOT NULL,
+	NOMPROV VARCHAR NULL)"
   )
-  
-  # regiones ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS regiones")
-  
+
+  # DPTO ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS DPTO")
+
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE regiones (
-	region_ref_id INTEGER NOT NULL,
-	censo_ref_id INTEGER NULL,
-	idregion VARCHAR NULL,
-	redcoden VARCHAR(2) NOT NULL,
-	nom_region VARCHAR NULL)"
+    "CREATE TABLE DPTO (
+    DPTO_REF_ID INTEGER NOT NULL,
+    PROV_REF_ID INTEGER NULL,
+    IDDPTO VARCHAR NULL,
+    DPTO VARCHAR(2) NOT NULL,
+    NOMDPTO VARCHAR NULL)"
   )
-  
-  # viviendas ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS viviendas")
-  
+
+
+  # FRAC ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS FRAC")
+
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE viviendas (
-	vivienda_ref_id INTEGER NOT NULL,
-	zonaloc_ref_id INTEGER NULL,
-	nviv INTEGER NULL,
-	p01 INTEGER NULL,
-	p02 INTEGER NULL,
-	p03a INTEGER NULL,
-	p03b INTEGER NULL,
-	p03c INTEGER NULL,
-	p04 INTEGER NULL,
-	p05 INTEGER NULL,
-	cant_hog INTEGER NULL,
-	cant_per INTEGER NULL,
-	ind_hacin DOUBLE NULL,
-	ind_hacin_rec INTEGER NULL,
-	ind_material INTEGER NULL)"
+    "CREATE TABLE FRAC (
+    FRAC_REF_ID INTEGER NOT NULL,
+    DPTO_REF_ID INTEGER NULL,
+    IDFRAC VARCHAR NULL)"
   )
-  
+
+  # RADIO ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS RADIO")
+
+  DBI::dbSendQuery(
+    con,
+    "CREATE TABLE RADIO (
+    RADIO_REF_ID INTEGER NOT NULL,
+    FRAC_REF_ID INTEGER NULL,
+    IDRADIO  VARCHAR NULL)"
+  )
+
+
+
+  # VIVIENDA ----
+
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS VIVIENDA")
+
+  DBI::dbSendQuery(
+    con,
+    "CREATE TABLE VIVIENDA (
+	VIVIENDA_REF_ID INTEGER NOT NULL,
+	RADIO_REF_ID INTEGER NULL,
+	TIPVV INTEGER NULL,
+	V01 INTEGER NULL,
+	V02 INTEGER NULL,
+	V00 INTEGER NULL,
+	URP INTEGER NULL,
+	INCALSERV INTEGER NULL,
+	INMAT INTEGER NULL,
+	MUNI INTEGER NULL,
+	LOCAL INTEGER NULL,
+	INCALCONS INTEGER NULL,
+	TOTHOG DOUBLE NULL)"
+  )
+
   # metadatos ----
-  
+
   DBI::dbSendQuery(con, "DROP TABLE IF EXISTS metadatos")
-  
+
   DBI::dbSendQuery(
     con,
     "CREATE TABLE metadatos (
 	version_duckdb VARCHAR NOT NULL,
 	fecha_modificacion VARCHAR NOT NULL)"
   )
-  
+
   # variables ----
-  
+
   DBI::dbSendQuery(con, "DROP TABLE IF EXISTS variables")
-  
+
   DBI::dbSendQuery(
     con,
     "CREATE TABLE variables (
@@ -163,7 +162,7 @@ create_schema <- function() {
   )
 
   DBI::dbSendQuery(con, "DROP TABLE IF EXISTS variables_codificacion")
-  
+
   DBI::dbSendQuery(
     con,
     "CREATE TABLE variables_codificacion (
@@ -172,29 +171,21 @@ create_schema <- function() {
 	valor INTEGER NULL,
   descripcion VARCHAR NULL)"
   )
-  
-  # zonas ----
-  
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS zonas")
-  
-  DBI::dbSendQuery(
-    con,
-    "CREATE TABLE zonas (
-	zonaloc_ref_id INTEGER NOT NULL,
-	geocodigo VARCHAR NOT NULL,
-	observacion VARCHAR NULL)"
-  )
-  
+
+
   # indexes ----
-  
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX hogares_hogar_ref_id ON hogares (hogar_ref_id)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX viviendas_vivienda_ref_id ON viviendas (vivienda_ref_id)")
-  
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX zonas_zonaloc_ref_id ON zonas (zonaloc_ref_id)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX zonas_geocodigo ON zonas (geocodigo)")
-  
+
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX PERSONAS_PERSONA_REF_ID ON PERSONA (PERSONA_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX HOGARES_HOGAR_REF_ID ON HOGAR (HOGAR_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX VIVIENDAS_VIVIENDA_REF_ID ON VIVIENDA (VIVIENDA_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX FRACCIONES_FRAC_REF_ID ON FRAC (FRAC_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX RADIOS_RADIO_REF_ID ON RADIO (RADIO_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX DEPTOS_DPTO_REF_ID ON DPTO (DPTO_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX PROVS_PROV_REF_ID ON PROV (PROV_REF_ID)")
+
+
   # disconnect ----
-  
+
   DBI::dbDisconnect(con, shutdown = TRUE)
   gc()
 }

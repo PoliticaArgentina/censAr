@@ -23,10 +23,10 @@ censo_pane <- function() {
     observer$connectionOpened(
       type = "CensAr",
       host = "censAr",
-      displayName = "Tablas Censo 2017",
+      displayName = "Tablas Censo 2010",
       icon = system.file("img", "cl-logo.png", package = "censAr"),
       connectCode = "censAr::censo_pane()",
-      disconnect = censo2017::censo_desconectar,
+      disconnect = censAr::censo_desconectar,
       listObjectTypes = function() {
         list(
           table = list(contains = "data")
