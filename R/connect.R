@@ -137,7 +137,7 @@ censo_status <- function(msg = TRUE) {
 
 censo_tables <- function() {
   c("VIVIENDA", "RADIO", "PROV", "PERSONA",
-    "HOGAR", "DPTO", "FRAC", "variables_codificacion", "metadatos")
+    "HOGAR", "DPTO", "FRAC","variables", "variables_codificacion", "metadatos")
 }
 
 censo_cache <- new.env()
