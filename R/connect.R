@@ -10,7 +10,7 @@ censo_path <- function() {
 
 censo_check_status <- function() {
   if (!censo_status(FALSE)) {
-    stop("La base de datos local del Censo 2017 esta vacia o daniada.
+    stop("La base de datos local del Censo 2010 esta vacia o daniada.
          Descargala con censo_descargar().")
   }
 }
@@ -19,13 +19,13 @@ censo_check_status <- function() {
 #'
 #' Devuelve una conexion a la base de datos local. Esto corresponde a una
 #' conexion a una base DuckDB compatible con DBI. A diferencia de
-#' [censo2017::censo_tabla()], esta funcion es mas flexible y se puede usar con
+#' [censAr::censo_tabla()], esta funcion es mas flexible y se puede usar con
 #' dbplyr para leer unicamente lo que se necesita o directamente con DBI para
 #' usar comandos SQL.
 #'
 #' @param dir La ubicacion de la base de datos en el disco. Por defecto es
-#' `censo2017` en la carpeta de datos del usuario de R o la variable de entorno
-#' `CENSO2017_DIR` si el usuario la especifica.
+#' `censAr` en la carpeta de datos del usuario de R o la variable de entorno
+#' `CENSAR_DIR` si el usuario la especifica.
 #'
 #' @export
 #'
@@ -136,8 +136,8 @@ censo_status <- function(msg = TRUE) {
 }
 
 censo_tables <- function() {
-  c("VIVIENDA", "RADIO", "PROV", "PERSONA",
-    "HOGAR", "DPTO", "FRAC","variables", "variables_codificacion", "metadatos")
+  c("vivienda", "radio", "prov", "persona",
+    "hogar", "dpto", "frac","variables", "variables_codificacion", "metadatos")
 }
 
 censo_cache <- new.env()

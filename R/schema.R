@@ -5,11 +5,11 @@ create_schema <- function() {
 
   # HOGAR ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS HOGAR")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS hogar")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE HOGAR (
+    "CREATE TABLE hogar (
     HOGAR_REF_ID INTEGER NOT NULL,
     VIVIENDA_REF_ID INTEGER NULL,
     NHOG INTEGER NULL,
@@ -37,11 +37,11 @@ create_schema <- function() {
 
   # PERSONA ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS PEROSONA")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS persona")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE PERSONA (
+    "CREATE TABLE persona (
 	PERSONA_REF_ID INTEGER NOT NULL,
 	HOGAR_REF_ID INTEGER NULL,
 	personan INTEGER NULL,
@@ -61,11 +61,11 @@ create_schema <- function() {
 
   # PROV ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS PROV")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS prov")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE PROV (
+    "CREATE TABLE prov (
 	PROV_REF_ID INTEGER NULL,
 	CPV2010_REF_ID INTEGER NULL,
 	IDPROV INTEGER NULL,
@@ -75,11 +75,11 @@ create_schema <- function() {
 
   # DPTO ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS DPTO")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS dpto")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE DPTO (
+    "CREATE TABLE dpto (
     DPTO_REF_ID INTEGER NOT NULL,
     PROV_REF_ID INTEGER NULL,
     IDDPTO VARCHAR NULL,
@@ -90,11 +90,11 @@ create_schema <- function() {
 
   # FRAC ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS FRAC")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS frac")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE FRAC (
+    "CREATE TABLE frac (
     FRAC_REF_ID INTEGER NOT NULL,
     DPTO_REF_ID INTEGER NULL,
     IDFRAC VARCHAR NULL)"
@@ -102,11 +102,11 @@ create_schema <- function() {
 
   # RADIO ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS RADIO")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS radio")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE RADIO (
+    "CREATE TABLE radio (
     RADIO_REF_ID INTEGER NOT NULL,
     FRAC_REF_ID INTEGER NULL,
     IDRADIO  VARCHAR NULL)"
@@ -116,11 +116,11 @@ create_schema <- function() {
 
   # VIVIENDA ----
 
-  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS VIVIENDA")
+  DBI::dbSendQuery(con, "DROP TABLE IF EXISTS vivienda")
 
   DBI::dbSendQuery(
     con,
-    "CREATE TABLE VIVIENDA (
+    "CREATE TABLE vivienda (
 	VIVIENDA_REF_ID INTEGER NOT NULL,
 	RADIO_REF_ID INTEGER NULL,
 	TIPVV INTEGER NULL,
@@ -175,13 +175,13 @@ create_schema <- function() {
 
   # indexes ----
 
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX PERSONAS_PERSONA_REF_ID ON PERSONA (PERSONA_REF_ID)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX HOGARES_HOGAR_REF_ID ON HOGAR (HOGAR_REF_ID)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX VIVIENDAS_VIVIENDA_REF_ID ON VIVIENDA (VIVIENDA_REF_ID)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX FRACCIONES_FRAC_REF_ID ON FRAC (FRAC_REF_ID)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX RADIOS_RADIO_REF_ID ON RADIO (RADIO_REF_ID)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX DEPTOS_DPTO_REF_ID ON DPTO (DPTO_REF_ID)")
-  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX PROVS_PROV_REF_ID ON PROV (PROV_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX PERSONAS_PERSONA_REF_ID ON persona (PERSONA_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX HOGARES_HOGAR_REF_ID ON hogar (HOGAR_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX VIVIENDAS_VIVIENDA_REF_ID ON vivienda (VIVIENDA_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX FRACCIONES_FRAC_REF_ID ON frac (FRAC_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX RADIOS_RADIO_REF_ID ON radio (RADIO_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX DEPTOS_DPTO_REF_ID ON dpto (DPTO_REF_ID)")
+  DBI::dbSendQuery(con, "CREATE UNIQUE INDEX PROVS_PROV_REF_ID ON prov (PROV_REF_ID)")
 
 
   # disconnect ----

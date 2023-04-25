@@ -24,7 +24,7 @@ censo_pane <- function() {
       type = "CensAr",
       host = "censAr",
       displayName = "Tablas Censo 2010",
-      icon = system.file("img", "cl-logo.png", package = "censAr"),
+      icon = system.file("img", "censAr.png", package = "censAr"),
       connectCode = "censAr::censo_pane()",
       disconnect = censAr::censo_desconectar,
       listObjectTypes = function() {

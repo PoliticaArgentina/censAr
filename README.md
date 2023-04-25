@@ -3,13 +3,24 @@
 
 <a><img src="https://user-images.githubusercontent.com/12114624/170827237-86cf8586-204b-46b0-a0f2-c38184966f75.jpg" width="200" align="right"/></a>
 
+[![Project Status: WIP - Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
 # censAr
 
 Paquete de R para trabajar con datos de los Censos de Argentina basado
 en [*Censo Chile (Redatam) R
-pkg*](https://github.com/ropensci/censo2017)
+pkg*](https://github.com/ropensci/censo2017). Esta primera versión en
+desarrollo permite la descarga de la base de microdatos del CENSO 2010
+(exportados como archivos a partir del [CONVERSOR
+REDATAM](https://github.com/discontinuos/redatam-converter)) obtenidos
+del portal [datar.info](http://datar.info/group/censos-nacionales).
 
-## Fuentes de datos
+# Trabajo en progreso
+
+## Fuentes de datos a explorar
 
 -   INDEC - Redatam (2001 y 2010)
     <https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-6>
@@ -17,15 +28,12 @@ pkg*](https://github.com/ropensci/censo2017)
 -   CENSOS 1869 - 1895
     <http://censos1869-1895.sociales.uba.ar/descargas> (Muestras)
 
-## [datar (microdatos REDATAM)](http://datar.info/group/censos-nacionales)
+## [microdatos REDATAM](http://datar.info/group/censos-nacionales)
 
 -   <http://datar.info/dataset/censo-2001-microdatos> (2001 en txt
     plano)
 -   <http://datar.info/dataset/cnpv-1991-microdatos> (1991 en txt plano)
 -   <http://datar.info/dataset/censo-2010-microdatos> (2010)
-
-**Detalle de los archivos comprimidos**
-![image](https://user-images.githubusercontent.com/12114624/170827087-f2cdc8c0-cdfd-4e3b-b72a-039f321420f7.png)
 
 ### GEO
 

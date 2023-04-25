@@ -8,18 +8,12 @@ Authors@R: c(
                role = c("aut", "cre", "cph"),
                email = "juanpabloruiznicolini@gmail.com")
     )
-Description: Provee un acceso conveniente a mas de 17 millones de registros
-    de la base de datos del Censo 2017. Los datos fueron importados desde
-    el DVD oficial del INE usando el Convertidor REDATAM creado por Pablo De
-    Grande. Esta paquete esta documentado intencionalmente en castellano
-    asciificado para que funcione sin problema en diferentes plataformas.
-    (Provides convenient access to more than 17 million records from the
-    Chilean Census 2017 database. The datasets were imported from the official
-    DVD provided by the Chilean National Bureau of Statistics by using the
-    REDATAM converter created by Pablo De Grande and in addition it includes the
-    maps accompanying these datasets.)
-URL: https://docs.ropensci.org/censo2017/
-BugReports: https://github.com/ropensci/censo2017/issues/
+Description: Provee un acceso conveniente a mas de 40 millones de registros
+    de la base de datos del Censo 2010 de Argentina. Los datos fueron obtenidos
+    de 'datar', donde se publican datos en texto plano a partir del Convertidor REDATAM creado por Pablo De
+    Grande. 
+URL: https://politicaargentina.github.io/censAr/
+BugReports: https://github.com/politicaargentina/censAr/issues/
 License: CC0
 Encoding: UTF-8
 LazyData: true
