@@ -4,7 +4,7 @@ sql_action <- function() {
     contents <- paste(
       "-- !preview conn=censAr::censo_conectar()",
       "",
-      "SELECT * FROM comunas",
+      "SELECT * FROM dpto",
       "",
       sep = "\n"
     )
