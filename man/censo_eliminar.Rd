@@ -11,7 +11,7 @@ censo_eliminar(preguntar = TRUE)
 borrar cualquier base del censo existente. Por defecto es verdadero.}
 }
 \description{
-Elimina el directorio \code{censo2017} y todos sus contenidos, incluyendo versiones
+Elimina el directorio \code{censAr} y todos sus contenidos, incluyendo versiones
 de la base de datos del Censo creadas con cualquier version de 'DuckDB'.
 }
 \examples{

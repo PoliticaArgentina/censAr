@@ -1,8 +1,13 @@
+#' Tablas con detalles de variables y codificaciones
+#'
+
 library(censAr)
 library(xml2)
 library(tidyverse)
 
 d <- read_xml("data-raw/descripcion.xml")
+
+
 
 cadena_a_titulo <- function(x) {
   x %>%
@@ -509,5 +514,20 @@ censo_codificacion_variables <- censo_codificacion_variables %>%
   drop_na() %>%
   mutate(valor = as.integer(valor))
 
-data.table::fwrite(censo_variables, "data-raw/variables.tsv", sep = "\t")
-data.table::fwrite(censo_codificacion_variables, "data-raw/variables_codificacion.tsv", sep = "\t")
+#' @name censo_codificacion_variables
+#' @docType data
+#' @author Juan Pablo Ruiz Nicolini
+#' @keywords data
+
+usethis::use_data(censo_codificacion_variables, internal = TRUE, overwrite = TRUE)
+
+
+#' @name censo_variables
+#' @docType data
+#' @author Juan Pablo Ruiz Nicolini
+#' @keywords data
+
+usethis::use_data(censo_variables, internal = TRUE, overwrite = TRUE)
+
+#data.table::fwrite(censo_variables, "data-raw/variables.tsv", sep = "\t")
+#data.table::fwrite(censo_codificacion_variables, "data-raw/variables_codificacion.tsv", sep = "\t")

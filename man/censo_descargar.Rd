@@ -9,7 +9,7 @@ censo_descargar(ver = NULL)
 \arguments{
 \item{ver}{La version a descargar. Por defecto es la ultima version
 disponible en GitHub. Se pueden ver todas las versiones en
-\url{https://github.com/pachamaltese/censo2017/releases}.}
+\url{https://github.com/ropensci/censo2017/releases}.}
 }
 \description{
 Este comando descarga la base de datos completa como un unico archivo zip que

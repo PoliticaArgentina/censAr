@@ -80,6 +80,7 @@ censo_descargar <- function(ver = NULL) {
     invisible(gc())
   }
 
+  # METADATOS
   metadatos <- data.frame(version_duckdb = utils::packageVersion("duckdb"),
                           fecha_modificacion = Sys.time())
   metadatos$version_duckdb <- as.character(metadatos$version_duckdb)
@@ -88,6 +89,9 @@ censo_descargar <- function(ver = NULL) {
   con <- censo_conectar()
   suppressMessages(DBI::dbWriteTable(con, "metadatos", metadatos, append = T, temporary = F))
   DBI::dbDisconnect(con, shutdown = TRUE)
+
+
+  # UPDATE
 
   update_censo_pane()
   censo_pane()

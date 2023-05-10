@@ -1,6 +1,6 @@
 #' Elimina la Base de Datos del Censo de tu Computador
 #'
-#' Elimina el directorio `censAR` y todos sus contenidos, incluyendo versiones
+#' Elimina el directorio `censAr` y todos sus contenidos, incluyendo versiones
 #' de la base de datos del Censo creadas con cualquier version de 'DuckDB'.
 #'
 #' @param preguntar Si acaso se despliega un menu para confirmar la accion de

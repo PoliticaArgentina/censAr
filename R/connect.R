@@ -79,14 +79,14 @@ censo_conectar <- function(dir = censo_path()) {
 #' Tablas Completas de la Base de Datos del Censo
 #'
 #' Devuelve una tabla completa de la base de datos. Para entregar datos
-#' filtrados previamente se debe usar [censo2017::censo_conectar()].
+#' filtrados previamente se debe usar [censAr::censo_conectar()].
 #'
 #' @param tabla Una cadena de texto indicando la tabla a extraer
 #' @return Un tibble
 #' @export
 #'
 #' @examples
-#' \dontrun{ censo_tabla("comunas") }
+#' \dontrun{ censo_tabla("dpto") }
 censo_tabla <- function(tabla) {
   df <- tryCatch(
     tibble::as_tibble(DBI::dbReadTable(censo_conectar(), tabla)),
