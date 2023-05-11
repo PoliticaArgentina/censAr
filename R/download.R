@@ -51,7 +51,7 @@ censo_descargar <- function(ver = NULL) {
   unlink(zfile)
 
   finp_tsv <- list.files(destdir, full.names = TRUE, pattern = "tsv")
-  finp_tsv <- finp_tsv[2:8]
+  finp_tsv <- finp_tsv[2:10]
 
   invisible(create_schema())
 
