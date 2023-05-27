@@ -16,3 +16,4 @@ data-raw/*.prj
 data-raw/files-for-user-db
 inst/*.log
 inst/*.pdf
+docs
