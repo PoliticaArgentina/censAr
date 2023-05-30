@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<a><img src="https://user-images.githubusercontent.com/12114624/170827237-86cf8586-204b-46b0-a0f2-c38184966f75.jpg" width="200" align="right"/></a>
+<a><img src="https://raw.githubusercontent.com/PoliticaArgentina/censAr/main/inst/img/censAr.png" width="200" align="right"/></a>
 
 [![Project Status: WIP - Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
@@ -22,20 +22,19 @@ del portal [datar.info](http://datar.info/group/censos-nacionales).
 
 ## Fuentes de datos a explorar
 
--   INDEC - Redatam (2001 y 2010)
-    <https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-6>
--   IPUMS <https://international.ipums.org/i>
--   CENSOS 1869 - 1895
-    <http://censos1869-1895.sociales.uba.ar/descargas> (Muestras)
+- INDEC - Redatam (2001 y 2010)
+  <https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-6>
+- IPUMS <https://international.ipums.org/i>
+- CENSOS 1869 - 1895 <http://censos1869-1895.sociales.uba.ar/descargas>
+  (Muestras)
 
 ## [microdatos REDATAM](http://datar.info/group/censos-nacionales)
 
--   <http://datar.info/dataset/censo-2001-microdatos> (2001 en txt
-    plano)
--   <http://datar.info/dataset/cnpv-1991-microdatos> (1991 en txt plano)
--   <http://datar.info/dataset/censo-2010-microdatos> (2010)
+- <http://datar.info/dataset/censo-2001-microdatos> (2001 en txt plano)
+- <http://datar.info/dataset/cnpv-1991-microdatos> (1991 en txt plano)
+- <http://datar.info/dataset/censo-2010-microdatos> (2010)
 
 ### GEO
 
--   2001 <http://datar.info/dataset/cartografia-censo-2001>
--   2010 <http://datar.info/dataset/censo-2010-cartografia>
+- 2001 <http://datar.info/dataset/cartografia-censo-2001>
+- 2010 <http://datar.info/dataset/censo-2010-cartografia>
