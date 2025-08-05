@@ -1,0 +1,22 @@
+# This is the Citation File Format file for this software.
+# See: https://citation-file-format.github.io/
+
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "censAr: Base de Datos de Facil Acceso de Censos de Arentina (Argentina´s Census Easy Access Database)"
+version: 0.0.0.9
+type: software
+authors:
+  - given-names: "Juan Pablo"
+    family-names: "Ruiz Nicolini"
+    email: "juanpabloruiznicolini@gmail.com"
+    # orcid: "https://orcid.org/0000-0002-3138-6343" # Optional: Uncomment and add ORCID if available
+
+# --- IMPORTANT ---
+# Please update the two fields below with the correct information.
+
+# The date this specific version (0.0.0.9) was released.
+date-released: 2025-08-05 
+
+# The URL of the GitHub repository.
+repository-code: "https://github.com/username/censAr"
